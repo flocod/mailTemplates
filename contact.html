@@ -1,0 +1,309 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
+      body {
+        display: block;
+        font-family: Montserrat;
+        font-size: 1.2em;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+      }
+      .contain_tab {
+        background: rgb(251, 251, 251);
+        width: 80%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container .tab {
+        width: 100%;
+      }
+      .container .tab tr {
+        width: 90%;
+      }
+      .container .tab tr td {
+        padding-bottom: 10px;
+      }
+
+      .left {
+        width: 100px;
+      }
+
+      @media all and (max-width: 550px) {
+        .contain_tab {
+          width: 90%;
+        }
+        .container .tab {
+          font-size: 0.75em !important;
+        }
+      }
+      @media all and (max-width: 455px) {
+        .container .tab {
+          font-size: 12px !important;
+        }
+      }
+
+      @media all and (max-width: 381px) {
+        .container .tab {
+          font-size: 11px !important;
+        }
+
+        .contain_tab {
+          width: 90%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      * {
+        font-family: Montserrat !important;
+      }
+    </style>
+
+    <div class="container">
+      <div class="contain_tab">
+        <table class="tab">
+          <tr>
+            <td align="left" class="left" valign="top">Nom</td>
+            <td align="left" valign="top">{{nom}}</td>
+          </tr>
+          <tr>
+            <td align="left" class="left" valign="top">Prenom</td>
+            <td align="left" valign="top">{{prenom}}</td>
+          </tr>
+          <tr>
+            <td align="left" class="left" valign="top">Email</td>
+            <td align="left" valign="top">{{email}}</td>
+          </tr>
+
+          <tr>
+            <td align="left" class="left" valign="top">Téléphone</td>
+            <td align="left" valign="top">{{telephone}}</td>
+          </tr>
+          <tr>
+            <td align="left" class="left" valign="top">Object</td>
+            <td align="left" valign="top">{{object}}</td>
+          </tr>
+          <tr>
+            <td align="left" class="left" valign="top">
+              Enregistrer mes données
+            </td>
+            <td align="left" class="left" valign="top">{{save}}</td>
+          </tr>
+        </table>
+        <table
+          style="font-family: arial, helvetica, sans-serif"
+          role="presentation"
+          cellpadding="0"
+          cellspacing="0"
+          width="100%"
+          border="0"
+          class="tab"
+        >
+          <tbody>
+            <tr>
+              <td
+                style="
+                  overflow-wrap: break-word;
+                  word-break: break-word;
+                  padding: 10px;
+                  padding-left: 0px !important;
+                  font-family: arial, helvetica, sans-serif;
+                "
+                align="left"
+              >
+                <br />
+                <h4
+                  class="signat"
+                  style="
+                    margin: 0px;
+                    line-height: 140%;
+                    text-align: left;
+                    word-wrap: break-word;
+                    font-weight: normal;
+                    font-family: arial, helvetica, sans-serif;
+                  "
+                >
+                  Cordialement,<br />L'&eacute;quipe Support<br />Support Team
+                </h4>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table
+          style="font-family: arial, helvetica, sans-serif"
+          role="presentation"
+          cellpadding="0"
+          cellspacing="0"
+          width="100%"
+          border="0"
+          class="tab"
+        >
+          <tbody>
+            <tr>
+              <td
+                style="
+                  overflow-wrap: break-word;
+                  word-break: break-word;
+                  padding: 10px;
+                  padding-left: 0px !important;
+                  font-family: arial, helvetica, sans-serif;
+                "
+                align="left"
+              >
+                <div>
+                  <a
+                    class="flex-ico mailto-link"
+                    href="mailto:support@cfacash.com"
+                    target="_blank"
+                    style="
+                      display: flex;
+                      justify-content: left;
+                      align-items: center;
+                      margin-bottom: 5px;
+                    "
+                  >
+                    <div class="image-ico" style="display: block; height: 17px">
+                      <img
+                        alt=""
+                        src="https://www.pngrepo.com/png/65426/512/email.png"
+                        style="
+                          display: block;
+                          max-height: 17px;
+                          min-height: 17px;
+                        "
+                      />
+                    </div>
+                    <div
+                      class="text-ico"
+                      style="display: block; margin-left: 10px"
+                    >
+                      support@cfacash.com
+                    </div>
+                  </a>
+
+                  <a
+                    target="_blank"
+                    class="flex-ico"
+                    href="https://wa.me/237659264612"
+                    rel="noopener"
+                    style="
+                      display: flex;
+                      justify-content: left;
+                      align-items: center;
+                      margin-bottom: 5px;
+                    "
+                  >
+                    <div
+                      class="image-ico"
+                      style="display: block; max-height: 17px; min-height: 17px"
+                    >
+                      <img
+                        alt=""
+                        src="https://www.pngrepo.com/png/303150/512/whatsapp-symbol-logo.png"
+                        style="
+                          display: block;
+                          max-height: 17px;
+                          min-height: 17px;
+                        "
+                      />
+                    </div>
+                    <div
+                      class="text-ico"
+                      style="display: block; margin-left: 10px"
+                    >
+                      +237 659 264 612
+                    </div>
+                  </a>
+
+                  <div
+                    style="
+                      margin-top: 20px;
+                      display: block;
+                      margin-bottom: 5px;
+                      width: 100%;
+                    "
+                    class="flex-ico logo_box"
+                  >
+                    <div
+                      class="image-logo"
+                      style="
+                        max-height: 30px;
+                        min-height: 30px;
+                        display: inline-block;
+                      "
+                    >
+                      <img
+                        alt=""
+                        src="https://dev.cfacash.com/images/CFAcash.png"
+                        style="
+                          max-height: 30px;
+                          min-height: 30px;
+                          display: inline-block;
+                        "
+                      />
+                    </div>
+                    <div
+                      class="text-logos"
+                      style="
+                        display: inline-block;
+                        margin-right: 15px;
+                        margin-left: 15px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                      "
+                    >
+                      Une Fintech de
+                      <br />
+                      A Fintech of
+                    </div>
+                    <div
+                      class="image-logo"
+                      style="
+                        max-height: 30px;
+                        min-height: 30px;
+                        display: inline-block;
+                      "
+                    >
+                      <img
+                        alt=""
+                        src="https://www.feuzesolutions.com/img/FS_LOGO.png"
+                        style="
+                          max-height: 30px;
+                          min-height: 30px;
+                          display: inline-block;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

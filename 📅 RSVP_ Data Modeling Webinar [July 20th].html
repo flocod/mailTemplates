@@ -1,0 +1,1073 @@
+<html lang="fr">
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+      }
+      .mail-detail-content {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 13px;
+        font-weight: 400;
+        font-feature-settings: "liga" 0;
+        width: 100%;
+        position: relative;
+        padding: 0;
+      }
+      .ios.smartphone .mail-detail-content {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+      }
+      .smartphone .mail-detail-content {
+        font-size: 15px;
+      }
+      .mail-detail-content > div > [class$="-content"] {
+        padding: 0;
+      }
+      .mail-detail-content.plain-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        white-space: pre-wrap;
+      }
+      .mail-detail-content.plain-text blockquote {
+        white-space: normal;
+      }
+      .mail-detail-content.fixed-width-font,
+      .mail-detail-content.fixed-width-font.plain-text,
+      .mail-detail-content.fixed-width-font blockquote,
+      .mail-detail-content.fixed-width-font.plain-text blockquote,
+      .mail-detail-content.fixed-width-font blockquote p,
+      .mail-detail-content.fixed-width-font.plain-text blockquote p {
+        font-family: monospace;
+        -webkit-font-feature-settings: normal;
+        font-feature-settings: normal;
+      }
+      .mail-detail-content.simple-mail {
+        max-width: 700px;
+      }
+      .mail-detail-content.simple-mail.big-screen {
+        max-width: 100%;
+      }
+      .mail-detail-content.simple-mail img {
+        max-width: 100%;
+        height: auto !important;
+      }
+      .mail-detail-content img[src=""] {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(255, 255, 255, 0.5) 20px,
+          rgba(255, 255, 255, 0.5) 40px
+        );
+      }
+      .mail-detail-content p {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        margin: 0 0 1em;
+      }
+      .mail-detail-content h1 {
+        font-size: 28px;
+      }
+      .mail-detail-content h2 {
+        font-size: 21px;
+      }
+      .mail-detail-content h3 {
+        font-size: 16.38px;
+      }
+      .mail-detail-content h4 {
+        font-size: 14px;
+      }
+      .mail-detail-content h5 {
+        font-size: 11.62px;
+      }
+      .mail-detail-content h6 {
+        font-size: 9.38px;
+      }
+      .mail-detail-content a {
+        word-break: break-word;
+        text-decoration: none;
+        color: inherit;
+      }
+      .mail-detail-content a:hover {
+        color: inherit;
+      }
+      .mail-detail-content a[href] {
+        color: #3c61aa;
+        text-decoration: underline;
+      }
+      .mail-detail-content th {
+        padding: 8px;
+        text-align: center;
+      }
+      .mail-detail-content th[align="left"] {
+        text-align: left;
+      }
+      .mail-detail-content .calendar-detail .label {
+        display: block;
+        text-shadow: none;
+        font-weight: 400;
+        background-color: transparent;
+      }
+      .mail-detail-content img.emoji-softbank {
+        margin: 0 2px;
+      }
+      .mail-detail-content pre {
+        word-break: keep-all;
+        word-break: initial;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border: 0 none;
+        border-radius: 0;
+      }
+      .mail-detail-content table {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 13px;
+        font-weight: 400;
+        font-feature-settings: "liga" 0;
+        line-height: normal;
+        border-collapse: collapse;
+      }
+      .mail-detail-content ul,
+      .mail-detail-content ol {
+        padding: 0;
+        padding-left: 16px;
+        margin: 1em 0 1em 24px;
+      }
+      .mail-detail-content ul {
+        list-style-type: disc;
+      }
+      .mail-detail-content ul ul {
+        list-style-type: circle;
+      }
+      .mail-detail-content ul ul ul {
+        list-style-type: square;
+      }
+      .mail-detail-content li {
+        line-height: normal;
+        margin-bottom: 0.5em;
+      }
+      .mail-detail-content blockquote {
+        color: #555;
+        font-size: 13px;
+        border-left: 2px solid #ddd;
+        padding: 0 0 0 16px;
+        margin: 16px 0;
+      }
+      .mail-detail-content blockquote p {
+        font-size: 13px;
+      }
+      .mail-detail-content blockquote blockquote {
+        border-color: #283f73;
+        margin: 8px 0;
+      }
+      .mail-detail-content.colorQuoted blockquote blockquote {
+        color: #283f73 !important;
+        border-left: 2px solid #283f73;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #283f73;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #1b2a4d;
+      }
+      .mail-detail-content.colorQuoted blockquote blockquote blockquote {
+        color: #dd0880 !important;
+        border-left: 2px solid #dd0880;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #dd0880;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #ac0663;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote {
+        color: #8f09c7 !important;
+        border-left: 2px solid #8f09c7;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #8f09c7;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #6c0796;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote {
+        color: #767676 !important;
+        border-left: 2px solid #767676;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #767676;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #5d5d5d;
+      }
+      .mail-detail-content.disable-links a[href] {
+        color: #aaa !important;
+        text-decoration: line-through !important;
+        cursor: default !important;
+        pointer-events: none !important;
+      }
+      .mail-detail-content .blockquote-toggle {
+        color: #767676;
+        font-size: 13px;
+        padding-left: 56px;
+        margin: 16px 0;
+        min-height: 16px;
+        word-break: break-word;
+      }
+      .mail-detail-content .blockquote-toggle button.bqt {
+        color: #696969;
+        background-color: #eee;
+        padding: 1px 10px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 16px;
+        cursor: pointer;
+        outline: 0;
+        position: absolute;
+        left: 0;
+        border: 0;
+      }
+      .mail-detail-content .blockquote-toggle button.bqt:hover,
+      .mail-detail-content .blockquote-toggle button.bqt:focus {
+        color: #fff;
+        background-color: #3c61aa;
+        text-decoration: none;
+      }
+      .mail-detail-content .max-size-warning {
+        color: #767676;
+        padding: 16px 16px 0;
+        border-top: 1px solid #ddd;
+      }
+      .mail-detail-content a.deep-link {
+        color: #fff;
+        background-color: #3c61aa;
+        text-decoration: none;
+        font-size: 90%;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol" !important;
+        padding: 0.1em 8px;
+        border-radius: 3px;
+      }
+      .mail-detail-content a.deep-link:hover,
+      .mail-detail-content a.deep-link:focus,
+      .mail-detail-content a.deep-link:active {
+        color: #fff;
+        background-color: #2f4b84;
+      }
+      @media print {
+        .mail-detail-content .collapsed-blockquote {
+          display: block !important;
+        }
+        .mail-detail-content .blockquote-toggle {
+          display: none !important;
+        }
+      }
+      .mail-detail-content > div[id*="ox-"] > h1,
+      .mail-detail-content > div[id*="ox-"] > h2,
+      .mail-detail-content > div[id*="ox-"] > h3,
+      .mail-detail-content > div[id*="ox-"] > h4,
+      .mail-detail-content > div[id*="ox-"] > h5 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      min-width: 260px;
+      min-height: 100%;
+      padding: 0;
+      margin: 0 auto;
+      background-color: #f6f6f6;
+    "
+    class="mail-detail-content noI18n colorQuoted"
+    role="complementary"
+    aria-label="📅 RSVP: Data Modeling Webinar [July 20th]"
+  >
+    <style type="text/css">
+      .mail-detail-content html,
+      body {
+        min-width: 260px;
+        min-height: 100%;
+        padding: 0px;
+        margin: 0px auto;
+      }
+      .mail-detail-content a img {
+        border: none;
+      }
+      .mail-detail-content .ReadMsgBody {
+        width: 100%;
+      }
+      .mail-detail-content .ExternalClass {
+        width: 100%;
+      }
+      .mail-detail-content .ExternalClass * {
+        line-height: 100%;
+      }
+      .mail-detail-content table,
+      td {
+        border-collapse: collapse;
+      }
+      .mail-detail-content .button {
+        overflow-wrap: break-word;
+      }
+      @media screen and (max-width: 480px) {
+      }
+      .mail-detail-content ul {
+        padding: 0px !important;
+        margin: 0px 0px 0px 40px !important;
+      }
+      .mail-detail-content li {
+        margin-bottom: 10px !important;
+      }
+      .mail-detail-content sub,
+      sup {
+        font-size: 70%;
+        line-height: 0;
+        position: relative;
+      }
+      .mail-detail-content sup {
+        vertical-align: super;
+      }
+      .mail-detail-content sub {
+        bottom: -0.25em;
+      }
+      .mail-detail-content a {
+        color: rgb(19, 170, 82);
+      }
+      @media screen and (max-width: 480px) {
+        .mail-detail-content .tolkien-column {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: auto !important;
+        }
+        .mail-detail-content .tolkien-column img.full {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .mail-detail-content .tolkien-column img[shrinktofit="true"] {
+          width: auto !important;
+          max-width: 100% !important;
+        }
+      }
+      .mail-detail-content .hide-in-desktop {
+        display: none;
+        max-height: 0px;
+      }</style
+    ><style type="text/css" id="media-query">
+      @media (max-width: 520px) {
+        .mail-detail-content .hide-in-mobile {
+          min-height: 0px;
+          max-height: 0px;
+          max-width: 0px;
+          display: none;
+          overflow: hidden;
+          font-size: 0px;
+        }
+        .mail-detail-content .hide-in-desktop {
+          display: block !important;
+          max-height: none !important;
+        }
+      }</style
+    ><style id="asset-specific-css"></style>
+    <div
+      style="
+        display: none;
+        font-size: 1px;
+        color: #333333;
+        line-height: 1px;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+      "
+    >
+      We look forward to seeing you there!
+    </div>
+    <table
+      style="background: #f6f6f6"
+      cellspacing="0"
+      cellpadding="0"
+      width="100%"
+      class="color-wrap"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <table
+              style="max-width: 600px; min-width: 300px; margin: 0 auto"
+              cellspacing="0"
+              cellpadding="0"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td style="background-color: transparent; line-height: 18px">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table cellspacing="0" cellpadding="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    class="elq-header-footer-cell cell"
+                                    style="
+                                      background-color: transparent;
+                                      line-height: 18px;
+                                      padding: 0px 0px 0px 0px;
+                                    "
+                                  >
+                                    <span>
+                                      <table
+                                        width="100%"
+                                        style="
+                                          width: 100%;
+                                          background-color: #ffffff;
+                                          color: #ffffff;
+                                          border-collapse: collapse;
+                                        "
+                                        height="30"
+                                        align="center"
+                                      >
+                                        <tbody>
+                                          <tr style="height: 30px" height="30">
+                                            <td
+                                              valign="middle"
+                                              style="
+                                                vertical-align: middle;
+                                                background-color: #f6f6f6;
+                                              "
+                                              align="center"
+                                            >
+                                              &nbsp;
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              class="row row-0"
+              style="max-width: 600px; min-width: 300px; margin: 0 auto"
+              cellspacing="0"
+              cellpadding="0"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td style="background: #ffffff">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table cellspacing="0" cellpadding="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      text-align: left;
+                                      vertical-align: top;
+                                      font-size: 0px;
+                                    "
+                                  >
+                                    <table
+                                      style="
+                                        vertical-align: top;
+                                        display: inline-table;
+                                        background: transparent;
+                                        table-layout: fixed;
+                                        font-family: Arial, Helvetica,
+                                          sans-serif;
+                                        font-size: 12px;
+                                        color: #31302f;
+                                        max-width: 100%;
+                                        width: 100%;
+                                        width: -webkit-calc(230400px - 48000%);
+                                        width: calc(230400px - 48000%);
+                                        min-width: 480px;
+                                        min-width: -webkit-calc(100%);
+                                        min-width: calc(100%);
+                                      "
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                      class="tolkien-column tolkien-column-12 col col-0"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              background-color: transparent;
+                                              line-height: 0;
+                                              padding: 0px 0px 0px 0px;
+                                              text-align: center;
+                                            "
+                                            class="elq-image-cell cell cell-0"
+                                          >
+                                            <a
+                                              data-targettype="webpage"
+                                              href="https://s413370795.t.en25.com/e/er?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;s=413370795&amp;lid=17191&amp;elqTrackId=F471081FA41A9D47AB4179DCC77CF58F&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1"
+                                              target="_blank"
+                                              rel="noopener"
+                                            >
+                                              <img
+                                                style="
+                                                  width: 100%;
+                                                  height: auto;
+                                                  max-width: 620px;
+                                                "
+                                                width="600"
+                                                height="262"
+                                                alt="Become a Data Innovation MVP: Dodge Blockers, Accelerate Time-to-Market &amp; Win Big"
+                                                src="http://img03.en25.com/EloquaImages/clients/MongoDB/%7B34c7d2e3-aa33-427b-979d-8892f052f3be%7D_EmailHeader_620x270_Date.png"
+                                            /></a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            class="elq-text-cell cell cell-1"
+                                            style="
+                                              background-color: transparent;
+                                              line-height: 18px;
+                                              padding: 30px 30px 0px 30px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                display: inline-block;
+                                                width: 100%;
+                                              "
+                                            >
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >Hi
+                                                  <span>jean paul</span>,</span
+                                                >
+                                              </div>
+                                              <div><br /></div>
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >A frequently asked question
+                                                  in the MongoDB community is
+                                                  “I’m designing an application
+                                                  to do X, how do I model the
+                                                  data?”</span
+                                                >
+                                              </div>
+                                              <div><br /></div>
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >In this live webinar we will
+                                                  examine the most important
+                                                  considerations when making
+                                                  decisions about your data
+                                                  model, so that you can create
+                                                  the model that best fits your
+                                                  application.</span
+                                                >
+                                              </div>
+                                              <div><br /></div>
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >You will learn :</span
+                                                >
+                                              </div>
+                                              <div><br /></div>
+                                              <ul>
+                                                <li>
+                                                  <span style="font-size: 14px"
+                                                    >The differences between
+                                                    data modeling in MongoDB vs.
+                                                    relational databases</span
+                                                  >
+                                                </li>
+                                                <li>
+                                                  <span style="font-size: 14px"
+                                                    >The key considerations for
+                                                    data modeling with
+                                                    MongoDB</span
+                                                  >
+                                                </li>
+                                                <li>
+                                                  <span style="font-size: 14px"
+                                                    >How to further enhance the
+                                                    power of the document model
+                                                    with schema design
+                                                    patterns</span
+                                                  >
+                                                </li>
+                                              </ul>
+                                              <div><br /></div>
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >Register today to save your
+                                                  spot. We look forward to
+                                                  seeing you there!</span
+                                                >
+                                              </div>
+                                              <div><br /></div>
+                                              <div
+                                                style="line-height: 18px"
+                                                data-lineheight="1.5"
+                                              >
+                                                <br />
+                                              </div>
+                                              <div
+                                                style="line-height: 18px"
+                                                data-lineheight="1.5"
+                                              >
+                                                <br />
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            class="elq-button-cell cell cell-2"
+                                            style="
+                                              background-color: transparent;
+                                              line-height: 18px;
+                                              padding: 10px 10px 10px 10px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                text-align: center;
+                                                font-family: Arial, Helvetica,
+                                                  sans-serif;
+                                              "
+                                            >
+                                              <div></div>
+                                              <a
+                                                style="
+                                                  text-decoration: none;
+                                                  vertical-align: middle;
+                                                  word-wrap: break-word;
+                                                  overflow-wrap: break-word;
+                                                  color: #fff;
+                                                  text-align: center;
+                                                  background-color: #00ed64;
+                                                  padding: 10px 20px 10px 20px;
+                                                  border-radius: 2px;
+                                                  display: inline-block;
+                                                  max-width: 100%;
+                                                  width: auto;
+                                                "
+                                                data-targetname=""
+                                                data-targettype="webpage"
+                                                target="_blank"
+                                                href="https://s413370795.t.en25.com/e/er?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;s=413370795&amp;lid=17191&amp;elqTrackId=97BA52A8C6E92940C2E7483CA72C0C24&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1"
+                                                rel="noopener"
+                                                ><span
+                                                  style="
+                                                    background-color: #00ed64;
+                                                    cursor: pointer;
+                                                    text-decoration: none;
+                                                    user-select: none;
+                                                  "
+                                                  ><span
+                                                    ><strong
+                                                      style="
+                                                        color: rgb(0, 0, 0);
+                                                        font-size: 14px;
+                                                      "
+                                                      >Save your
+                                                      seat&nbsp;</strong
+                                                    ></span
+                                                  ></span
+                                                ></a
+                                              >
+                                              <div></div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            class="elq-text-cell cell cell-3"
+                                            style="
+                                              background-color: transparent;
+                                              line-height: 18px;
+                                              padding: 10px 30px 10px 30px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                display: inline-block;
+                                                width: 100%;
+                                              "
+                                            >
+                                              <div>
+                                                <span style="font-size: 14px"
+                                                  >Think Big, Go Far,</span
+                                                >
+                                              </div>
+                                              <div
+                                                style="line-height: 21px"
+                                                data-lineheight="1.5"
+                                              >
+                                                <span
+                                                  style="
+                                                    font-size: 14px;
+                                                    color: rgb(0, 0, 0);
+                                                  "
+                                                  >The MongoDB Team</span
+                                                >
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              style="max-width: 600px; min-width: 300px; margin: 0 auto"
+              cellspacing="0"
+              cellpadding="0"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td style="background-color: transparent; line-height: 18px">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table cellspacing="0" cellpadding="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    class="elq-header-footer-cell cell"
+                                    style="
+                                      background-color: transparent;
+                                      line-height: 18px;
+                                      padding: 0px 0px 0px 0px;
+                                    "
+                                  >
+                                    <span>
+                                      <div style="text-align: center">
+                                        <style type="text/css">
+                                          .mail-detail-content
+                                            a[x-apple-data-detectors] {
+                                            color: inherit !important;
+                                            text-decoration: none !important;
+                                            font-size: inherit !important;
+                                            font-family: inherit !important;
+                                            font-weight: inherit !important;
+                                            line-height: inherit !important;
+                                          }
+                                        </style>
+                                      </div>
+
+                                      <table
+                                        width="100%"
+                                        style="
+                                          width: 100%;
+                                          height: 157px;
+                                          background-color: #ffffff;
+                                          color: #616161;
+                                          border-collapse: collapse;
+                                        "
+                                        height="157"
+                                        align="center"
+                                      >
+                                        <tbody>
+                                          <tr style="height: 15px" height="15">
+                                            <td colspan="6">
+                                              <p style="text-align: center">
+                                                &nbsp;
+                                              </p>
+                                            </td>
+                                          </tr>
+                                          <tr style="height: 25px" height="25">
+                                            <td width="228">
+                                              <br />
+                                              &nbsp;
+                                            </td>
+                                            <td
+                                              width="41"
+                                              valign="middle"
+                                              style="
+                                                width: 41 px;
+                                                align: center;
+                                                vertical-align: middle;
+                                              "
+                                              align="center"
+                                            >
+                                              <a
+                                                target="_blank"
+                                                href="https://twitter.com/MongoDB?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;elqTrackId=e53813e18cb544909f1821028a585d22&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1&amp;elqCampaignId=26905"
+                                                rel="noopener"
+                                                ><img
+                                                  width="25"
+                                                  style="width: 25px"
+                                                  src="http://img03.en25.com/EloquaImages/clients/MongoDB/%7b1c5f399c-f1d3-4364-be92-c0e4536b42cf%7d_social_icon-04.png"
+                                                  alt="Share on Twitter"
+                                              /></a>
+                                            </td>
+                                            <td
+                                              width="41"
+                                              valign="middle"
+                                              style="
+                                                width: 41 px;
+                                                align: center;
+                                                vertical-align: middle;
+                                              "
+                                              align="center"
+                                            >
+                                              <a
+                                                target="_blank"
+                                                href="https://www.instagram.com/mongodb/?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;hl=en&amp;elqTrackId=a8a7d2e0591045ccad8ce7499f10a080&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1&amp;elqCampaignId=26905"
+                                                rel="noopener"
+                                                ><img
+                                                  width="25"
+                                                  style="width: 25px"
+                                                  src="http://img03.en25.com/EloquaImages/clients/MongoDB/%7Bb10028e0-7afb-421f-a6bb-bfcfeb751fed%7D_instagram-with-circle.png"
+                                                  alt="Share on Facebook"
+                                              /></a>
+                                            </td>
+                                            <td
+                                              width="41"
+                                              valign="middle"
+                                              style="
+                                                width: 41 px;
+                                                align: center;
+                                                vertical-align: middle;
+                                              "
+                                              align="center"
+                                            >
+                                              <a
+                                                target="_blank"
+                                                href="https://www.twitch.tv/mongodb?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;elqTrackId=5a3eb5217aa64a5d8ec05cbc96d43d1a&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1&amp;elqCampaignId=26905"
+                                                rel="noopener"
+                                                ><img
+                                                  width="25"
+                                                  style="width: 25px"
+                                                  src="http://img03.en25.com/EloquaImages/clients/MongoDB/%7Bac9060f9-9c05-48cc-b4a6-3327a721b0d0%7D_twitch2.png"
+                                                  alt="Share on Twitch"
+                                              /></a>
+                                            </td>
+                                            <td
+                                              width="41"
+                                              valign="middle"
+                                              style="
+                                                width: 41 px;
+                                                align: center;
+                                                vertical-align: middle;
+                                              "
+                                              align="center"
+                                            >
+                                              <a
+                                                target="_blank"
+                                                href="https://www.linkedin.com/company/mongodbinc?utm_campaign=INT_EM_Intro_Data_Modeling_7_22_Email_1&amp;utm_medium=email&amp;utm_source=eloqua&amp;utm_term=%F0%9F%93%85%20RSVP%3A%20Data%20Modeling%20Webinar%20%5BJuly%2020th%5D&amp;elqTrackId=77df70a4a0134f24a6fbd63284688ffc&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1&amp;elqCampaignId=26905"
+                                                rel="noopener"
+                                                ><img
+                                                  width="25"
+                                                  style="width: 25px"
+                                                  src="http://img03.en25.com/EloquaImages/clients/MongoDB/%7bd5369514-33d0-47f6-88d9-c5f1e593dfa6%7d_social_icon-03.png"
+                                                  alt="Share on LinkedIn"
+                                              /></a>
+                                            </td>
+                                            <td width="228">&nbsp;</td>
+                                          </tr>
+                                          <tr style="height: 17px" height="17">
+                                            <td colspan="6">&nbsp;</td>
+                                          </tr>
+                                          <tr style="height: 44 px" height="44">
+                                            <td
+                                              valign="middle"
+                                              style="vertical-align: middle"
+                                              colspan="6"
+                                              class="footerCell"
+                                              align="center"
+                                            >
+                                              <span
+                                                style="
+                                                  font-family: 'Akzidenz-Grotesk Std',
+                                                    'Helvetica Neue', Helvetica,
+                                                    Arial, sans-serif;
+                                                  font-size: 8px;
+                                                  line-height: 125%;
+                                                  color: #616161;
+                                                "
+                                                >MongoDB Inc., 2022. All rights
+                                                reserved.<br />
+                                                1633 Broadway, Floor 38, New
+                                                York, NY 10019</span
+                                              ><br />
+                                              <br />
+                                              <span
+                                                style="
+                                                  font-family: 'Akzidenz-Grotesk Std',
+                                                    'Helvetica Neue', Helvetica,
+                                                    Arial, sans-serif;
+                                                  font-size: 8px;
+                                                  line-height: 125%;
+                                                "
+                                                ><a
+                                                  target="_blank"
+                                                  style="
+                                                    font-size: 10px;
+                                                    color: #13aa52;
+                                                    text-decoration: none;
+                                                  "
+                                                  href="http://s413370795.t.en25.com/e/sl?s=413370795&amp;elq=684830f206c04834866f758e28ce510a"
+                                                  rel="noopener"
+                                                  ><span style="color: #006cfa"
+                                                    >Unsubscribe or change your
+                                                    email preferences.</span
+                                                  ></a
+                                                ><span style="color: #006cfa">
+                                                </span
+                                              ></span>
+                                            </td>
+                                          </tr>
+                                          <tr style="height: 18px" height="18">
+                                            <td colspan="6">&nbsp;</td>
+                                          </tr>
+                                          <tr style="height: 38px" height="38">
+                                            <td
+                                              valign="middle"
+                                              style="
+                                                vertical-align: middle;
+                                                background-color: #f5f6f7;
+                                              "
+                                              colspan="6"
+                                              align="center"
+                                            >
+                                              <span
+                                                style="
+                                                  font-family: 'Akzidenz-Grotesk Std',
+                                                    'Helvetica Neue', Helvetica,
+                                                    Arial, sans-serif;
+                                                  font-size: 9px;
+                                                  line-height: 125%;
+                                                  font-weight: bold;
+                                                "
+                                                ><a
+                                                  target="_blank"
+                                                  style="
+                                                    color: #13aa52;
+                                                    text-decoration: none;
+                                                  "
+                                                  href="https://s413370795.t.en25.com/e/es?s=413370795&amp;e=7510727&amp;elqTrackId=71ee2d8782a8479193a95cbc0f2f39b7&amp;elq=684830f206c04834866f758e28ce510a&amp;elqaid=16871&amp;elqat=1"
+                                                  rel="noopener"
+                                                  ><span style="color: #006cfa"
+                                                    >View in browser</span
+                                                  ></a
+                                                ><span style="color: #006cfa">
+                                                </span
+                                              ></span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                      <div style="text-align: center">
+                                        &nbsp;
+                                      </div>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <img
+      height="1px"
+      width="1px"
+      border="0"
+      alt=""
+      src="https://s413370795.t.en25.com/e/FooterImages/FooterImage1?elq=684830f206c04834866f758e28ce510a&amp;siteid=413370795"
+    />
+  </body>
+</html>

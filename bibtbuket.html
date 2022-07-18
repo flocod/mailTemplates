@@ -1,0 +1,2065 @@
+<html lang="fr">
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+      }
+      .mail-detail-content {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 13px;
+        font-weight: 400;
+        font-feature-settings: "liga" 0;
+        width: 100%;
+        position: relative;
+        padding: 0;
+      }
+      .ios.smartphone .mail-detail-content {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+      }
+      .smartphone .mail-detail-content {
+        font-size: 15px;
+      }
+      .mail-detail-content > div > [class$="-content"] {
+        padding: 0;
+      }
+      .mail-detail-content.plain-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        white-space: pre-wrap;
+      }
+      .mail-detail-content.plain-text blockquote {
+        white-space: normal;
+      }
+      .mail-detail-content.fixed-width-font,
+      .mail-detail-content.fixed-width-font.plain-text,
+      .mail-detail-content.fixed-width-font blockquote,
+      .mail-detail-content.fixed-width-font.plain-text blockquote,
+      .mail-detail-content.fixed-width-font blockquote p,
+      .mail-detail-content.fixed-width-font.plain-text blockquote p {
+        font-family: monospace;
+        -webkit-font-feature-settings: normal;
+        font-feature-settings: normal;
+      }
+      .mail-detail-content.simple-mail {
+        max-width: 700px;
+      }
+      .mail-detail-content.simple-mail.big-screen {
+        max-width: 100%;
+      }
+      .mail-detail-content.simple-mail img {
+        max-width: 100%;
+        height: auto !important;
+      }
+      .mail-detail-content img[src=""] {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(255, 255, 255, 0.5) 20px,
+          rgba(255, 255, 255, 0.5) 40px
+        );
+      }
+      .mail-detail-content p {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        margin: 0 0 1em;
+      }
+      .mail-detail-content h1 {
+        font-size: 28px;
+      }
+      .mail-detail-content h2 {
+        font-size: 21px;
+      }
+      .mail-detail-content h3 {
+        font-size: 16.38px;
+      }
+      .mail-detail-content h4 {
+        font-size: 14px;
+      }
+      .mail-detail-content h5 {
+        font-size: 11.62px;
+      }
+      .mail-detail-content h6 {
+        font-size: 9.38px;
+      }
+      .mail-detail-content a {
+        word-break: break-word;
+        text-decoration: none;
+        color: inherit;
+      }
+      .mail-detail-content a:hover {
+        color: inherit;
+      }
+      .mail-detail-content a[href] {
+        color: #3c61aa;
+        text-decoration: underline;
+      }
+      .mail-detail-content th {
+        padding: 8px;
+        text-align: center;
+      }
+      .mail-detail-content th[align="left"] {
+        text-align: left;
+      }
+      .mail-detail-content .calendar-detail .label {
+        display: block;
+        text-shadow: none;
+        font-weight: 400;
+        background-color: transparent;
+      }
+      .mail-detail-content img.emoji-softbank {
+        margin: 0 2px;
+      }
+      .mail-detail-content pre {
+        word-break: keep-all;
+        word-break: initial;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border: 0 none;
+        border-radius: 0;
+      }
+      .mail-detail-content table {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 13px;
+        font-weight: 400;
+        font-feature-settings: "liga" 0;
+        line-height: normal;
+        border-collapse: collapse;
+      }
+      .mail-detail-content ul,
+      .mail-detail-content ol {
+        padding: 0;
+        padding-left: 16px;
+        margin: 1em 0 1em 24px;
+      }
+      .mail-detail-content ul {
+        list-style-type: disc;
+      }
+      .mail-detail-content ul ul {
+        list-style-type: circle;
+      }
+      .mail-detail-content ul ul ul {
+        list-style-type: square;
+      }
+      .mail-detail-content li {
+        line-height: normal;
+        margin-bottom: 0.5em;
+      }
+      .mail-detail-content blockquote {
+        color: #555;
+        font-size: 13px;
+        border-left: 2px solid #ddd;
+        padding: 0 0 0 16px;
+        margin: 16px 0;
+      }
+      .mail-detail-content blockquote p {
+        font-size: 13px;
+      }
+      .mail-detail-content blockquote blockquote {
+        border-color: #283f73;
+        margin: 8px 0;
+      }
+      .mail-detail-content.colorQuoted blockquote blockquote {
+        color: #283f73 !important;
+        border-left: 2px solid #283f73;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #283f73;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #1b2a4d;
+      }
+      .mail-detail-content.colorQuoted blockquote blockquote blockquote {
+        color: #dd0880 !important;
+        border-left: 2px solid #dd0880;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #dd0880;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #ac0663;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote {
+        color: #8f09c7 !important;
+        border-left: 2px solid #8f09c7;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #8f09c7;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #6c0796;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote {
+        color: #767676 !important;
+        border-left: 2px solid #767676;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link) {
+        color: #767676;
+      }
+      .mail-detail-content.colorQuoted
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        blockquote
+        a[href]:not(.deep-link):hover {
+        color: #5d5d5d;
+      }
+      .mail-detail-content.disable-links a[href] {
+        color: #aaa !important;
+        text-decoration: line-through !important;
+        cursor: default !important;
+        pointer-events: none !important;
+      }
+      .mail-detail-content .blockquote-toggle {
+        color: #767676;
+        font-size: 13px;
+        padding-left: 56px;
+        margin: 16px 0;
+        min-height: 16px;
+        word-break: break-word;
+      }
+      .mail-detail-content .blockquote-toggle button.bqt {
+        color: #696969;
+        background-color: #eee;
+        padding: 1px 10px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 16px;
+        cursor: pointer;
+        outline: 0;
+        position: absolute;
+        left: 0;
+        border: 0;
+      }
+      .mail-detail-content .blockquote-toggle button.bqt:hover,
+      .mail-detail-content .blockquote-toggle button.bqt:focus {
+        color: #fff;
+        background-color: #3c61aa;
+        text-decoration: none;
+      }
+      .mail-detail-content .max-size-warning {
+        color: #767676;
+        padding: 16px 16px 0;
+        border-top: 1px solid #ddd;
+      }
+      .mail-detail-content a.deep-link {
+        color: #fff;
+        background-color: #3c61aa;
+        text-decoration: none;
+        font-size: 90%;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol" !important;
+        padding: 0.1em 8px;
+        border-radius: 3px;
+      }
+      .mail-detail-content a.deep-link:hover,
+      .mail-detail-content a.deep-link:focus,
+      .mail-detail-content a.deep-link:active {
+        color: #fff;
+        background-color: #2f4b84;
+      }
+      @media print {
+        .mail-detail-content .collapsed-blockquote {
+          display: block !important;
+        }
+        .mail-detail-content .blockquote-toggle {
+          display: none !important;
+        }
+      }
+      .mail-detail-content > div[id*="ox-"] > h1,
+      .mail-detail-content > div[id*="ox-"] > h2,
+      .mail-detail-content > div[id*="ox-"] > h3,
+      .mail-detail-content > div[id*="ox-"] > h4,
+      .mail-detail-content > div[id*="ox-"] > h5 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body
+    style="margin: 0; padding: 0; background-color: #ffffff"
+    class="mail-detail-content noI18n colorQuoted"
+    role="complementary"
+    aria-label="Diff performance improvements on Bitbucket and more"
+  >
+    <style type="text/css">
+      .mail-detail-content table {
+        border-collapse: collapse;
+      }
+      .mail-detail-content img,
+      a img {
+        border: 0px;
+        height: auto;
+        outline: none;
+        text-decoration: none;
+      }
+      .mail-detail-content body {
+        padding: 0px;
+        height: 100% !important;
+        margin: 0px auto !important;
+        width: 100% !important;
+      }
+      .mail-detail-content img {
+      }
+      .mail-detail-content #outlook a {
+        padding: 0px;
+      }
+      .mail-detail-content table {
+      }
+      .mail-detail-content .ReadMsgBody {
+        width: 100%;
+      }
+      .mail-detail-content .ExternalClass {
+        width: 100%;
+      }
+      .mail-detail-content p,
+      a,
+      td {
+      }
+      .mail-detail-content p,
+      a,
+      td,
+      body,
+      table {
+        text-size-adjust: 100%;
+      }
+      .mail-detail-content .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass td,
+      .ExternalClass div,
+      .ExternalClass span,
+      .ExternalClass font {
+        line-height: 100%;
+      }
+      .mail-detail-content a [x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      @media screen and (max-width: 480px) {
+        .mail-detail-content .mw100 {
+          max-width: 100% !important;
+        }
+        .mail-detail-content .mw95 {
+          max-width: 95% !important;
+        }
+        .mail-detail-content .mw50 {
+          max-width: 50% !important;
+        }
+        .mail-detail-content .w100 {
+          width: 100% !important;
+        }
+        .mail-detail-content .w96 {
+          width: 96% !important;
+        }
+        .mail-detail-content .mblpdrm-r {
+          padding-right: 0px !important;
+        }
+        .mail-detail-content .mblpdrm-l {
+          padding-left: 0px !important;
+        }
+        .mail-detail-content .Hellode {
+          display: none !important;
+        }
+        .mail-detail-content .centertext {
+          text-align: center !important;
+        }
+        .mail-detail-content .marginauto {
+          margin: auto !important;
+        }
+      }
+    </style>
+
+    <style type="text/css">
+      .mail-detail-content div.preheader {
+        display: none !important;
+      }
+    </style>
+    <div style="font-size: 1px; display: none !important" class="preheader">
+      Diff performance improvements, engineering stories, and a new Forrester
+      report on DevOps with Atlassian
+    </div>
+    <table
+      style="width: 100%; margin: 0 auto; background-color: #ffffff"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td style="font-size: 0">&nbsp;</td>
+          <td style="width: 580px" valign="top" align="center">
+            <table
+              class="w96"
+              style="width: 100%"
+              border="0"
+              cellspacing="0"
+              cellpadding="0"
+              align="center"
+            >
+              <tbody>
+                <tr>
+                  <td align="center">
+                    <table
+                      style="width: 100%"
+                      border="0"
+                      cellspacing="0"
+                      cellpadding="0"
+                      align="center"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style="
+                              padding: 40px 0;
+                              border-bottom: 1px solid #cccccc;
+                            "
+                            align="center"
+                          >
+                            <a
+                              target="_blank"
+                              style="
+                                font-family: 'Helvetica neue', Helvetica, Arial,
+                                  Verdana, sans-serif;
+                                font-size: 16px;
+                                color: #253858;
+                                text-decoration: none;
+                              "
+                              alt="Atlassian"
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce16d6a3cc0ea0895fb947f909275c90571edd32390a8f9c8a349bac72c3222924a2625c4574007f66b0566efc38a2d1e5c8e5d77222153451f"
+                              rel="noopener"
+                            >
+                              <table
+                                class="stylingblock-content-wrapper"
+                                style="min-width: 100%"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      class="stylingblock-content-wrapper camarker-inner"
+                                    >
+                                      <center>
+                                        <img
+                                          style="
+                                            outline: 0;
+                                            padding: 0;
+                                            border: 0;
+                                            width: 180px;
+                                            height: auto;
+                                            font-family: 'Helvetica neue',
+                                              Helvetica, Arial, Verdana,
+                                              sans-serif;
+                                            font-size: 16px;
+                                            color: #0052cc;
+                                          "
+                                          width="180"
+                                          border="0"
+                                          alt="Bitbucket"
+                                          src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/1/Bitbucket.png"
+                                        /><img
+                                          height="1"
+                                          width="1"
+                                          src="https://pixel.app.returnpath.net/pixel.gif?r=caa2f107df157b407994b468c6c76cb819ca6a10&amp;c=105630558&amp;s=%%_subscriberid%%&amp;j=105630558&amp;emailname=2022-06-30_BB Digest June_EML-12544"
+                                        />
+                                      </center>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="padding-top: 40px; padding-bottom: 40px"
+                            align="center"
+                          >
+                            <a
+                              target="_blank"
+                              style="
+                                font-family: 'Helvetica neue', Helvetica, Arial,
+                                  Verdana, sans-serif;
+                                font-size: 12px;
+                                color: #253858;
+                                text-decoration: none;
+                              "
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce13db85018982886daa4921fe7201b07e166dc46a7ffdd2b31c3e861f8c78be7c1f46fb4b1f8b51ad9aa6da802ff0134ef236fc4f3f0cc76bd"
+                              rel="noopener"
+                            >
+                              <img
+                                style="
+                                  display: block;
+                                  outline: 0;
+                                  padding: 0;
+                                  height: auto;
+                                  font-family: 'Helvetica neue', Helvetica,
+                                    Arial, Verdana, sans-serif;
+                                  font-size: 16px;
+                                  color: #253858;
+                                "
+                                class="w100"
+                                width="350"
+                                border="0"
+                                alt="Diff performance improvements on Bitbucket and more"
+                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/4/image-20220518-203806.png"
+                            /></a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              border-top: 1px solid #cccccc;
+                              border-bottom: 1px solid #cccccc;
+                              padding-bottom: 20px;
+                              padding-top: 20px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: center;
+                              font-weight: bold;
+                            "
+                          >
+                            New updates for Bitbucket
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <table
+                      style="width: 100%"
+                      border="0"
+                      cellspacing="0"
+                      cellpadding="0"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 40px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            In this edition:
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td style="padding-top: 20px" align="center">
+                            <table
+                              style="width: 95%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      width: 20px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    •
+                                  </td>
+                                  <td
+                                    style="
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    Improving performance on complex diffs
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td
+                                    style="
+                                      height: 10px;
+                                      line-height: 10px;
+                                      font-size: 0;
+                                    "
+                                    height="10"
+                                    colspan="2"
+                                  >
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    style="
+                                      width: 20px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    •
+                                  </td>
+                                  <td
+                                    style="
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    How Atlassian made Git push over HTTPS 8x
+                                    faster for Bitbucket Cloud
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td
+                                    style="
+                                      height: 10px;
+                                      line-height: 10px;
+                                      font-size: 0;
+                                    "
+                                    height="10"
+                                    colspan="2"
+                                  >
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    style="
+                                      width: 20px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    •
+                                  </td>
+                                  <td
+                                    style="
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-size: 16px;
+                                      line-height: 22px;
+                                      color: #253858;
+                                      text-align: left;
+                                    "
+                                    valign="top"
+                                  >
+                                    Discover the Total Economic Impact of using
+                                    Atlassian Open&nbsp;DevOps
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              border-bottom: 1px solid #cccccc;
+                              padding-top: 20px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            &nbsp;
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td align="center">
+                            <table
+                              class="w100"
+                              style="width: 75%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding-top: 40px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-weight: bold;
+                                      font-size: 24px;
+                                      line-height: 30px;
+                                      color: #253858;
+                                      text-align: center;
+                                    "
+                                  >
+                                    <a
+                                      target="_blank"
+                                      style="
+                                        text-decoration: none;
+                                        color: #253858;
+                                        font-weight: bold;
+                                      "
+                                      href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1fb814821542d0b6d8ad458de8c22a1020637c2a03450a85956dc5536c9eebdebfa5da1fec633d11f33262df92fb6dacde8ea6d625c01dc50"
+                                      rel="noopener"
+                                    >
+                                      What's new in Bitbucket?</a
+                                    >
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 40px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                              font-weight: bold;
+                            "
+                          >
+                            Improving performance on complex diffs
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 0px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            Bitbucket Cloud is making changes to pull request
+                            diff functionality that will improve diff
+                            performance, particularly on complex diffs. We are
+                            changing our diff algorithm from what we call a
+                            '3‑way' diff to a 2‑way 'three‑dot' diff, which will
+                            show the difference between the tip of a source
+                            branch and the commit from which it branched off the
+                            destination, as shown below. Starting
+                            June&nbsp;6,&nbsp;2022, this new diff will be
+                            progressively rolled out on the pull request and
+                            branch page.
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td style="padding-top: 40px" align="center">
+                            <a
+                              target="_blank"
+                              style="
+                                font-family: 'Helvetica neue', Helvetica, Arial,
+                                  Verdana, sans-serif;
+                                font-size: 12px;
+                                color: #253858;
+                                text-decoration: none;
+                              "
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce18727ac359ae5b232687ea378b81645f4b1a255b514c943623ac0ea581d1f0dbf4f90b0186a9fd2cb17df96d472c462c8f65bdcb85c97c4e5"
+                              rel="noopener"
+                            >
+                              <img
+                                style="
+                                  display: block;
+                                  outline: 0;
+                                  padding: 0;
+                                  width: 100%;
+                                  height: auto;
+                                  font-family: 'Helvetica neue', Helvetica,
+                                    Arial, Verdana, sans-serif;
+                                  font-size: 16px;
+                                  color: #253858;
+                                "
+                                width="580"
+                                border="0"
+                                alt="What's new in Bitbucket?"
+                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/4/image-20220622-180751.png"
+                            /></a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td style="padding-top: 40px" align="center">
+                            <table border="0" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      border-radius: 3px;
+                                      background-color: #0052cc;
+                                    "
+                                    align="center"
+                                  >
+                                    <a
+                                      style="
+                                        display: inline-block;
+                                        border: 1px solid #0052cc;
+                                        font-family: 'Helvetica neue', Helvetica,
+                                          Arial, Verdana, sans-serif;
+                                        font-size: 16px;
+                                        color: #ffffff;
+                                        text-decoration: none;
+                                        border-radius: 3px;
+                                        padding: 15px 40px;
+                                      "
+                                      target="_blank"
+                                      href="https://click.e.atlassian.com/?qs=32c8db40d34cbce17b7b54b380ca096bde47acf3e35c3e0c688182220c8eed6eae012070e9d72f5e9f1152ebeb213d63c28482253e973a4123fdca8b62ed3c3b"
+                                      rel="noopener"
+                                    >
+                                      Learn more</a
+                                    >
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              border-bottom: 1px solid #cccccc;
+                              padding-top: 20px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            &nbsp;
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td align="center">
+                            <table
+                              class="w100"
+                              style="width: 75%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding-top: 40px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-weight: bold;
+                                      font-size: 24px;
+                                      line-height: 30px;
+                                      color: #253858;
+                                      text-align: center;
+                                    "
+                                  >
+                                    In case you missed it
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            class="pad0"
+                            style="
+                              background-color: #ffffff;
+                              padding: 20px 50px 0px 50px;
+                            "
+                          >
+                            <table
+                              align="center"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td align="center">
+                                    <table
+                                      style="width: 100%"
+                                      border="0"
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="padding: 20px 0px 0px 0px"
+                                            align="center"
+                                          >
+                                            <table
+                                              style="width: 100%"
+                                              border="0"
+                                              cellspacing="0"
+                                              cellpadding="0"
+                                            >
+                                              <tbody>
+                                                <tr>
+                                                  <td
+                                                    style="
+                                                      font-size: 0;
+                                                      vertical-align: middle;
+                                                    "
+                                                    align="center"
+                                                  >
+                                                    <div
+                                                      class="mw100"
+                                                      style="
+                                                        vertical-align: middle;
+                                                        width: 100%;
+                                                        max-width: 124px;
+                                                        display: inline-block;
+                                                      "
+                                                    >
+                                                      <table
+                                                        style="width: 100%"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              class="mblpdrm-r"
+                                                              style="
+                                                                padding-right: 20px;
+                                                              "
+                                                              align="center"
+                                                            >
+                                                              <table
+                                                                style="
+                                                                  width: 100%;
+                                                                "
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                border="0"
+                                                              >
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td
+                                                                      align="center"
+                                                                    >
+                                                                      <a
+                                                                        target="_blank"
+                                                                        class="centertext"
+                                                                        style="
+                                                                          font-family: 'Helvetica neue',
+                                                                            Helvetica,
+                                                                            Arial,
+                                                                            Verdana,
+                                                                            sans-serif;
+                                                                          font-size: 16px;
+                                                                          color: #253858;
+                                                                          text-decoration: none;
+                                                                        "
+                                                                        href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1eb26587409cc744db07336b1aeddc5184b7a75560eb029f201c5e0aa2cc3b25a80d8529e9719ff8b54cb6f55498d0ebe33d5676ee370fa09"
+                                                                        rel="noopener"
+                                                                      >
+                                                                        <img
+                                                                          class="centertext"
+                                                                          style="
+                                                                            outline: 0;
+                                                                            padding: 0;
+                                                                            border: 0;
+                                                                            width: 104px;
+                                                                            height: auto;
+                                                                            font-family: 'Helvetica neue',
+                                                                              Helvetica,
+                                                                              Arial,
+                                                                              Verdana,
+                                                                              sans-serif;
+                                                                            font-size: 16px;
+                                                                            line-height: 24px;
+                                                                            color: #253858;
+                                                                            text-align: center;
+                                                                          "
+                                                                          alt="How Atlassian made Git push over HTTPS faster for Bitbucket Cloud"
+                                                                          border="0"
+                                                                          width="104"
+                                                                          src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/4/image-20220622-181045.png"
+                                                                      /></a>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </div>
+
+                                                    <div
+                                                      class="mw100"
+                                                      style="
+                                                        display: inline-block;
+                                                        width: 100%;
+                                                        max-width: 356px;
+                                                        vertical-align: middle;
+                                                      "
+                                                    >
+                                                      <table
+                                                        style="width: 100%"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              class="centertext"
+                                                              style="
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                color: #253858;
+                                                                text-align: left;
+                                                              "
+                                                              align="center"
+                                                            >
+                                                              <a
+                                                                target="_blank"
+                                                                class="centertext"
+                                                                style="
+                                                                  font-family: 'Helvetica neue',
+                                                                    Helvetica,
+                                                                    Arial,
+                                                                    Verdana,
+                                                                    sans-serif;
+                                                                  font-size: 16px;
+                                                                  line-height: 24px;
+                                                                  color: #253858;
+                                                                  text-align: left;
+                                                                  text-decoration: none;
+                                                                  font-weight: bold;
+                                                                "
+                                                                href="https://click.e.atlassian.com/?qs=32c8db40d34cbce16ccc177de46378455ea16d438efb85cc6bce4ffcd4c26211cdaf597d27d3c0bdd5fd0f8b6eb6cb4e048639d2a27b89f6a50b66177427307e"
+                                                                rel="noopener"
+                                                              >
+                                                                How Atlassian
+                                                                made Git push
+                                                                over HTTPS
+                                                                faster for
+                                                                Bitbucket
+                                                                Cloud</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td
+                                                              class="centertext"
+                                                              align="left"
+                                                              style="
+                                                                padding-top: 5px;
+                                                                text-align: left;
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                color: #253858;
+                                                                text-decoration: none;
+                                                              "
+                                                            >
+                                                              Learn about how
+                                                              the Atlassian
+                                                              Networking Edge
+                                                              Services and
+                                                              Bitbucket Cloud
+                                                              engineering teams
+                                                              made the push
+                                                              speed for HTTPS up
+                                                              to eight times
+                                                              faster!
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td
+                                                              align="left"
+                                                              style="
+                                                                padding-top: 5px;
+                                                                text-align: left;
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                color: #0052cc;
+                                                              "
+                                                              class="centertext"
+                                                            >
+                                                              <a
+                                                                target="_blank"
+                                                                style="
+                                                                  text-decoration: none;
+                                                                  color: #0052cc;
+                                                                  font-weight: none;
+                                                                "
+                                                                href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1b213bf00279bbaa60c31f6057659f7d5a977534efa529cf8c4a7aca85b974ceb3714ec480b1560cc849a418b575de9f7b29d941a06a81a53"
+                                                                rel="noopener"
+                                                                >Learn more</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td align="center">
+                                    <table
+                                      style="width: 100%"
+                                      border="0"
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="padding: 40px 0px 0px 0px"
+                                            align="center"
+                                          >
+                                            <table
+                                              style="width: 100%"
+                                              border="0"
+                                              cellspacing="0"
+                                              cellpadding="0"
+                                            >
+                                              <tbody>
+                                                <tr>
+                                                  <td
+                                                    style="
+                                                      padding-left: 0px;
+                                                      font-size: 0;
+                                                      vertical-align: middle;
+                                                    "
+                                                    align="center"
+                                                  >
+                                                    <div
+                                                      class="mw100"
+                                                      style="
+                                                        vertical-align: middle;
+                                                        width: 100%;
+                                                        max-width: 124px;
+                                                        display: inline-block;
+                                                      "
+                                                    >
+                                                      <table
+                                                        style="width: 100%"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              class="mblpdrm-r"
+                                                              style="
+                                                                padding-right: 20px;
+                                                              "
+                                                              align="center"
+                                                            >
+                                                              <table
+                                                                style="
+                                                                  width: 100%;
+                                                                "
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                border="0"
+                                                              >
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td
+                                                                      align="center"
+                                                                    >
+                                                                      <a
+                                                                        target="_blank"
+                                                                        style="
+                                                                          font-family: 'Helvetica neue',
+                                                                            Helvetica,
+                                                                            Arial,
+                                                                            Verdana,
+                                                                            sans-serif;
+                                                                          font-size: 16px;
+                                                                          color: #253858;
+                                                                          text-decoration: none;
+                                                                        "
+                                                                        href="https://click.e.atlassian.com/?qs=32c8db40d34cbce193d3baa255c111ec169e142b51e4b04cafef197d434752fdf81a6565df8153b0916c487eb41803153f7684a06599c39696d5e79dcf4e445e"
+                                                                        rel="noopener"
+                                                                      >
+                                                                        <img
+                                                                          class="centertext"
+                                                                          style="
+                                                                            outline: 0;
+                                                                            padding: 0;
+                                                                            border: 0;
+                                                                            width: 104px;
+                                                                            height: auto;
+                                                                            font-family: 'Helvetica neue',
+                                                                              Helvetica,
+                                                                              Arial,
+                                                                              Verdana,
+                                                                              sans-serif;
+                                                                            font-size: 16px;
+                                                                            line-height: 24px;
+                                                                            color: #253858;
+                                                                            text-align: center;
+                                                                          "
+                                                                          alt="Discover the Total Economic Impact of using Atlassian Open DevOps"
+                                                                          border="0"
+                                                                          width="104"
+                                                                          src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/4/TEI-AOD-Booklet-cover.png"
+                                                                      /></a>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </div>
+
+                                                    <div
+                                                      class="mw100"
+                                                      style="
+                                                        display: inline-block;
+                                                        width: 100%;
+                                                        max-width: 356px;
+                                                        vertical-align: middle;
+                                                      "
+                                                    >
+                                                      <table
+                                                        style="width: 100%"
+                                                        cellpadding="0"
+                                                        cellspacing="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              class="centertext"
+                                                              style="
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                color: #253858;
+                                                                text-align: left;
+                                                              "
+                                                            >
+                                                              <a
+                                                                target="_blank"
+                                                                class="centertext"
+                                                                style="
+                                                                  font-family: 'Helvetica neue',
+                                                                    Helvetica,
+                                                                    Arial,
+                                                                    Verdana,
+                                                                    sans-serif;
+                                                                  font-size: 16px;
+                                                                  line-height: 24px;
+                                                                  color: #253858;
+                                                                  text-align: left;
+                                                                  text-decoration: none;
+                                                                  font-weight: bold;
+                                                                "
+                                                                href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1328240c5440b9367fa172326b95d96d28c8d9f4ebde1c1734f0376c926fe7e9da0b0353f2d50c151ce470d949c2c088827a1e15676b57475"
+                                                                rel="noopener"
+                                                              >
+                                                                Discover the
+                                                                Total Economic
+                                                                Impact of using
+                                                                Atlassian Open
+                                                                DevOps</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td
+                                                              class="centertext"
+                                                              align="left"
+                                                              style="
+                                                                padding-top: 5px;
+                                                                text-align: left;
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                color: #253858;
+                                                                text-decoration: none;
+                                                              "
+                                                            >
+                                                              Dive into the
+                                                              details in this
+                                                              Forrester Total
+                                                              Economic Impact
+                                                              study that found
+                                                              customers using
+                                                              Atlassian Open
+                                                              DevOps had an ROI
+                                                              of 358% over three
+                                                              years.
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td
+                                                              align="left"
+                                                              style="
+                                                                padding-top: 5px;
+                                                                text-align: left;
+                                                                font-family: 'Helvetica neue',
+                                                                  Helvetica,
+                                                                  Arial, Verdana,
+                                                                  sans-serif;
+                                                                font-size: 16px;
+                                                                line-height: 22px;
+                                                                color: #0052cc;
+                                                              "
+                                                              class="centertext"
+                                                            >
+                                                              <a
+                                                                target="_blank"
+                                                                style="
+                                                                  text-decoration: none;
+                                                                  color: #0052cc;
+                                                                  font-weight: none;
+                                                                "
+                                                                href="https://click.e.atlassian.com/?qs=32c8db40d34cbce10b37e08284c711e1e8007183359b6ac1c2e72f109a54c6df3cc07de0453ab5050fd23020e38a5f959aeb9333cc1fa55160295371c6f87bfc"
+                                                                rel="noopener"
+                                                                >Learn more</a
+                                                              >
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              border-bottom: 1px solid #cccccc;
+                              padding-top: 20px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            &nbsp;
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td align="center">
+                            <table
+                              class="w100"
+                              style="width: 75%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding-top: 40px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-weight: bold;
+                                      font-size: 24px;
+                                      line-height: 30px;
+                                      color: #253858;
+                                      text-align: center;
+                                    "
+                                  >
+                                    Have a question?
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 40px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            Join the Community to ask questions, access
+                            resources, and connect with other customers and
+                            Atlassians!
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 10px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            <a
+                              target="_blank"
+                              style="
+                                text-decoration: none;
+                                color: #0052cc;
+                                font-weight: none;
+                              "
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1e229efbf2ddd417fa06f0528a4451c34bdd4742514fa4fc7fb50edfac7a1f3504482e295f4a13d8d89d1fda6c1fa186df059e2ea79d590d9"
+                              rel="noopener"
+                              >Join the discussion</a
+                            >
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              border-bottom: 1px solid #cccccc;
+                              padding-top: 20px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            &nbsp;
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td align="center">
+                            <table
+                              class="w100"
+                              style="width: 75%"
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    style="
+                                      padding-top: 40px;
+                                      font-family: 'Helvetica neue', Helvetica,
+                                        Arial, Verdana, sans-serif;
+                                      font-weight: bold;
+                                      font-size: 24px;
+                                      line-height: 30px;
+                                      color: #253858;
+                                      text-align: center;
+                                    "
+                                  >
+                                    See you next month! Until then...
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 40px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            <strong>New to Bitbucket?</strong> It may be time
+                            for an upgrade. Compare features between our
+                            <a
+                              target="_blank"
+                              style="
+                                text-decoration: none;
+                                color: #0052cc;
+                                font-weight: none;
+                              "
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce145fab1ae9ac426ad0f14c8b4d35030c6e655339598e5a7737b4c49981f9919367a50a36839789a6f195deb2dd5de348de3ddb2b3eef5e155"
+                              rel="noopener"
+                              >Standard and Premium plans.</a
+                            >
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            style="
+                              padding-top: 10px;
+                              font-family: 'Helvetica neue', Helvetica, Arial,
+                                Verdana, sans-serif;
+                              font-size: 16px;
+                              line-height: 22px;
+                              color: #253858;
+                              text-align: left;
+                            "
+                          >
+                            <strong>Talk to us:</strong>
+                            <a
+                              target="_blank"
+                              style="
+                                text-decoration: none;
+                                color: #0052cc;
+                                font-weight: none;
+                              "
+                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1fc61e2367d68545d6cc4e5907a2f408ae0bce55a5b6f284a8f35024690ebc011aec2c873964bd73861ff1b07359eec33dead81be5d7a34ff"
+                              rel="noopener"
+                              >Join our research panel</a
+                            >
+                            and share your feedback with the Bitbucket product
+                            team.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <table
+                      class="stylingblock-content-wrapper"
+                      style="min-width: 100%"
+                      width="100%"
+                      cellspacing="0"
+                      cellpadding="0"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="stylingblock-content-wrapper camarker-inner"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              style="width: 100%"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    align="center"
+                                    style="
+                                      padding-top: 40px;
+                                      padding-bottom: 40px;
+                                    "
+                                  >
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="width: 100%"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            style="
+                                              border-top: 1px solid #cccccc;
+                                              padding-top: 40px;
+                                              font-family: 'Helvetica neue',
+                                                Helvetica, Arial, Verdana,
+                                                sans-serif;
+                                              font-size: 13px;
+                                              line-height: 19px;
+                                              color: #707070;
+                                              text-align: center;
+                                            "
+                                          >
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              href="https://view.e.atlassian.com/?qs=b1c99710e68155ee93e81a15da640ff8f9ec84611e2144f8a16c1836339d30f11f6feac744b06494ac58daf2d52b32c51e4d1ab2f3892c7b0b8200ef22de6068067d3ee576f093b75acd895fa2d4259e39c835dde8a31ace72748ba840d7672f"
+                                              rel="noopener"
+                                              >Read&nbsp;in&nbsp;browser</a
+                                            >
+                                            •
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce19a1c8a94b0429be9ab725c4d7a1857caba119b0baf5d1e484510032a6bc3fd22809adf9c216656a7328f276077599397ab3111b2870a23d5"
+                                              rel="noopener"
+                                              >Privacy&nbsp;policy</a
+                                            >
+                                            •
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1ad3649d4a1a60f1be5cc4f5c0649c59df8f6335fcc828021f7f694d3b12ec5644a350eefd267910a95cc89c263e27ea14965c69f6e59c662"
+                                              rel="noopener"
+                                              >Contact&nbsp;us</a
+                                            >
+                                            •
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1a6dfda483323a14a8b402c75a2ea23e33dfae89562fb82c77bbc689074fc990a457530d385c96df2dadfc3fb88a78f82eac273d6423428ac"
+                                              rel="noopener"
+                                              >Read&nbsp;our&nbsp;blog</a
+                                            >
+                                            •
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce10a9cc51c5b9cac0cb0b7c02a4d19dea94ccd99b5de1af3450a5cde78ba1ee96039ce51d9a7411616aa61918a1a1738dc0b0702376c187809"
+                                              rel="noopener"
+                                              >Join&nbsp;Atlassian&nbsp;Community</a
+                                            >
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              padding-top: 10px;
+                                              display: block;
+                                            "
+                                          >
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 16px;
+                                                color: #0052cc;
+                                                text-decoration: none;
+                                              "
+                                              alt="Facebook"
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce183acf850325847e30767d04e9a9b1b6f092359d311b07f8b1273aa3d1f8ae56e6619bd3070e399c0452c42f3b016f864dcc61c9d774265ca"
+                                              rel="noopener"
+                                            >
+                                              <img
+                                                align="middle"
+                                                border="0"
+                                                width="25"
+                                                style="
+                                                  line-height: 0px;
+                                                  outline: 0;
+                                                  padding: 0;
+                                                  border: 0;
+                                                  width: 25px;
+                                                  height: auto;
+                                                  font-family: 'Helvetica neue',
+                                                    Helvetica, Arial, Verdana,
+                                                    sans-serif;
+                                                  font-size: 16px;
+                                                  color: #0052cc;
+                                                "
+                                                alt="Facebook"
+                                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/1/Facebookx2.png"
+                                            /></a>
+                                            &nbsp;
+
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 16px;
+                                                color: #0052cc;
+                                                text-decoration: none;
+                                              "
+                                              alt="LinkedIn"
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce15aa18f314efc9533f4aba4b170f1f553644ef17fba0f474e990c8d9e593a0ed13f0d826c73f882448c9002fd777ef2bb2ab3b115eb6b35ca"
+                                              rel="noopener"
+                                            >
+                                              <img
+                                                align="middle"
+                                                border="0"
+                                                width="25"
+                                                style="
+                                                  outline: 0;
+                                                  padding: 0;
+                                                  border: 0;
+                                                  width: 25px;
+                                                  height: auto;
+                                                  font-family: 'Helvetica neue',
+                                                    Helvetica, Arial, Verdana,
+                                                    sans-serif;
+                                                  font-size: 16px;
+                                                  color: #0052cc;
+                                                "
+                                                alt="LinkedIn"
+                                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/1/LinkedInx2.png"
+                                            /></a>
+                                            &nbsp;
+
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 16px;
+                                                color: #0052cc;
+                                                text-decoration: none;
+                                              "
+                                              alt="Twitter"
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce132e20f7b078b2f5b84bac66249198fba304e372f38faedc9ce3b5ee1a911414ab03653de54231383b646d2ca86a4354a1cf9f4862b102a30"
+                                              rel="noopener"
+                                            >
+                                              <img
+                                                align="middle"
+                                                border="0"
+                                                width="25"
+                                                style="
+                                                  outline: 0;
+                                                  padding: 0;
+                                                  border: 0;
+                                                  width: 25px;
+                                                  height: auto;
+                                                  font-family: 'Helvetica neue',
+                                                    Helvetica, Arial, Verdana,
+                                                    sans-serif;
+                                                  font-size: 16px;
+                                                  color: #0052cc;
+                                                "
+                                                alt="Twitter"
+                                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/1/Twitterx2.png"
+                                            /></a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              padding-top: 10px;
+                                              font-family: 'Helvetica neue',
+                                                Helvetica, Arial, Verdana,
+                                                sans-serif;
+                                              font-size: 13px;
+                                              line-height: 19px;
+                                              color: #707070;
+                                              text-align: center;
+                                            "
+                                          >
+                                            Copyright 2022 Atlassian Pty Ltd.
+                                            All rights reserved. <br />We are
+                                            located at 341 George Street,
+                                            Sydney, NSW, 2000, Australia
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="padding-top: 20px"
+                                          >
+                                            <a
+                                              target="_blank"
+                                              style="
+                                                font-family: 'Helvetica neue',
+                                                  Helvetica, Arial, Verdana,
+                                                  sans-serif;
+                                                font-size: 16px;
+                                                color: #0052cc;
+                                                text-decoration: none;
+                                              "
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce1f2344a671c06f692ab68154bd7c2e1c644b0e22018cec3c078e3f3efccdc47343b0831b43951ff994663ed6b4031df88d712cf4af62204cf"
+                                              rel="noopener"
+                                              ><img
+                                                border="0"
+                                                width="116"
+                                                style="
+                                                  display: block;
+                                                  outline: 0;
+                                                  padding: 0;
+                                                  border: 0;
+                                                  width: 116px;
+                                                  height: auto;
+                                                  font-family: 'Helvetica neue',
+                                                    Helvetica, Arial, Verdana,
+                                                    sans-serif;
+                                                  font-size: 16px;
+                                                  color: #0052cc;
+                                                "
+                                                alt="Atlassian"
+                                                src="https://image.e.atlassian.com/lib/fe4011727164047d751070/m/1/Atlassian-logo.png"
+                                            /></a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            style="
+                                              padding-top: 20px;
+                                              font-family: 'Helvetica neue',
+                                                Helvetica, Arial, Verdana,
+                                                sans-serif;
+                                              font-size: 13px;
+                                              line-height: 19px;
+                                              color: #707070;
+                                              text-align: center;
+                                            "
+                                          >
+                                            <table
+                                              class="stylingblock-content-wrapper"
+                                              style="min-width: 100%"
+                                              width="100%"
+                                              cellspacing="0"
+                                              cellpadding="0"
+                                            >
+                                              <tbody>
+                                                <tr>
+                                                  <td
+                                                    class="stylingblock-content-wrapper camarker-inner"
+                                                  ></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+
+                                            If you no longer wish to receive
+                                            these emails, please
+                                            <a
+                                              style="
+                                                font-family: Helvetica, Arial,
+                                                  Verdana, sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              target="_blank"
+                                              href="https://preferences.atlassian.com/main/?hid=e74211423d9ac2462fd07e01429638b5"
+                                              rel="noopener"
+                                              >update your preferences</a
+                                            >
+                                            or
+                                            <a
+                                              style="
+                                                font-family: Helvetica, Arial,
+                                                  Verdana, sans-serif;
+                                                font-size: 13px;
+                                                color: #707070;
+                                                text-decoration: none;
+                                              "
+                                              target="_blank"
+                                              href="https://click.e.atlassian.com/?qs=32c8db40d34cbce16fab52fac4f47d2d252724ed302911f45030b1e01c4150f67cf62d24eb9f0c0f7e90ef1ed73ddb673f395d92924b4db8fff14e78ada54a1f"
+                                              rel="noopener"
+                                              >unsubscribe&nbsp;here</a
+                                            >.<img
+                                              alt=""
+                                              height="1"
+                                              width="1"
+                                              src="https://click.e.atlassian.com/open.aspx?ffcb10-fe2e15707062077d701178-fdbb157573620574761c75756c-fe4011727164047d751070-fe9715747165027971-fdf715767c65077f77167772-ff021571756102&amp;d=10158&amp;bmt=0"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td style="font-size: 0">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
